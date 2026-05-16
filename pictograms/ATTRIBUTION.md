@@ -17,4 +17,10 @@ Each PNG file in this directory corresponds to an AAC "kind" used by `tileVisual
 Pictograms downloaded at 500x500 resolution via the public ARASAAC API:
 `https://api.arasaac.org/api/pictograms/{id}?resolution=500`
 
+Distinct pictograms are used for `hello` (ID 6522) and `goodbye` (ID 6028) so the two
+greetings render with visually different symbols, and `all_done` (ID 28429), `stop`
+(ID 8289), `go` (ID 36448), and `want` (ID 31141) were chosen for clearer, more
+intuitive iconography (an actual stop sign, a green-lit traffic light, two crossed
+hands signalling "finished", and a hand-only reach).
+
 This project does NOT use proprietary symbol sets (Boardmaker/PCS, SymbolStix, Widgit) and makes no claim of exact equivalence to them.
