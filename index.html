@@ -12,10 +12,55 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // Mapping from tile "kind" (resolved by tileVisuals: QW[text] ?? YW[icon]) to a
+      // locally-bundled ARASAAC pictogram filename under ./pictograms/.
+      // Pictograms © Sergio Palao / ARASAAC — Government of Aragón — CC BY-NC-SA 4.0.
+      // The bundle's tile renderer checks window.__CONNECTUS_PICTOS[kind] before falling
+      // back to the original hand-drawn SVG, and a `data:image/` custom upload always wins.
+      window.__CONNECTUS_PICTOS = {"yes":"yes.png","no":"no.png","more":"more.png","help":"help.png","stop":"stop.png","go":"go.png","want":"want.png","like":"like.png","dislike":"dislike.png","allDone":"all_done.png","person":"person.png","people":"people.png","eat":"eat.png","lunch":"lunch.png","drink":"drink.png","bathroom":"bathroom.png","rest":"rest.png","happy":"happy.png","sad":"sad.png","scared":"scared.png","tired":"tired.png","doctor":"doctor.png","play":"play.png","book":"book.png","tv":"tv.png","outside":"outside.png","music":"music.png","school":"school.png","write":"write.png","draw":"draw.png","backpack":"backpack.png","door":"door.png","map":"map.png","up":"up.png","down":"down.png","on":"on.png","off":"off.png","love":"love.png"};
+    </script>
+    <style>
+      /* Pictogram tile: contain (not cover) so the full symbol is visible, and a soft Warm Cloud frame */
+      .tile-picture-pictogram {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(145deg, #F7E9D4 0%, #FFFFFF 60%, #EAD3B3 100%);
+        border: 2px solid #D2B48C;
+        border-radius: 0.9rem;
+        padding: 4px;
+        aspect-ratio: 1 / 1;
+        min-height: 72px;
+      }
+      .tile-picture-pictogram img { image-rendering: -webkit-optimize-contrast; }
+      /* Static credits row, always visible at the bottom of the app */
+      #connectus-credits {
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        padding: 4px 10px;
+        font: 11px/1.4 "DM Sans", system-ui, sans-serif;
+        color: #5A4A38;
+        background: rgba(255, 248, 238, 0.92);
+        border-top: 1px solid #E6D7C5;
+        text-align: center;
+        z-index: 50;
+        pointer-events: auto;
+      }
+      #connectus-credits a { color: #275DAD; text-decoration: underline; }
+      #root { padding-bottom: 28px; }
+    </style>
     <script type="module" crossorigin src="./assets/index-1gchKjVx.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-PHZvtSyf.css">
   </head>
   <body>
     <div id="root"></div>
+    <div id="connectus-credits" role="contentinfo">
+      Tile pictograms by
+      <a href="https://arasaac.org" target="_blank" rel="noopener">ARASAAC</a>
+      (Sergio Palao · Government of Aragón) —
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>.
+      Caregiver-uploaded images are shown as provided.
+    </div>
   </body>
 </html>
